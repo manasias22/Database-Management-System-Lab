@@ -1,0 +1,61 @@
+EXPERIMENT No. 5
+
+
+Aim: Perform simple queries and string manipulation operations.
+CREATE TABLE Employee(
+Emp_Id INTEGER CONSTRAINT Emp_eid_pk PRIMARY KEY,
+Emp_Name VARCHAR2(10),
+Job VARCHAR2(10),
+HireDate DATE,
+Salary NUMBER(10));
+
+DESC Employee;
+DROP Table Employee;
+
+SELECT * FROM Employee;
+
+INSERT INTO Employee VALUES (1234,'Johnson','Clerk','12-apr-2000',9000);    //12-apr-2000
+INSERT INTO Employee VALUES (2345,'Smith','Salesman','22-mar-2003',13000);   //22-mar-2003
+INSERT INTO Employee VALUES (4325,'Allen','Salesman','22-mar-2003',8000);    //22-mar-2003
+INSERT INTO Employee VALUES (4765,'Jones','Manager','08-jul-2001',45000);    //08-jul-2001
+INSERT INTO Employee VALUES (4890,'Clark','Salesman','15-may-1999',18000);   //15-may-1999
+INSERT INTO Employee VALUES (5678,'Marin','Manager','08-jun-1999',50000);   //08-jun-1999
+INSERT INTO Employee VALUES (9876,'Blake','Manager','26-sep-2002',30000);   //26-sep-2002
+
+DROP TABLE Student;
+
+SELECT DISTINCT Job FROM Employee;
+
+SELECT Emp_Id AS ID,Emp_Name AS NAME FROM Employee WHERE Job='Manager';
+
+SELECT Emp_Name FROM Employee WHERE Job='Clerk' OR Job='Salesman';
+
+SELECT * FROM Employee WHERE Job='Manager' AND Salary>40000;
+
+SELECT Emp_Name FROM Employee WHERE Job!='Salesman';
+
+SELECT Emp_Name FROM Employee WHERE Emp_Id=2345 OR Emp_Id=4325 OR Emp_Id=4765;  
+
+SELECT Emp_Name,Salary FROM Employee WHERE Salary BETWEEN 10000 AND 20000 ORDER BY Emp_Name ASC;
+
+SELECT * FROM Employee WHERE Emp_Id!=2345 AND Emp_Id!=9876;
+
+SELECT * FROM Employee WHERE Hiredate<'30-jun-2000'
+UNION
+SELECT * FROM Employee WHERE Hiredate>'30-jun-2002';
+
+
+
+SELECT * FROM Employee WHERE Emp_Name LIKE 'J%';
+
+SELECT * FROM Employee WHERE Emp_Name LIKE '__r%';
+
+SELECT * FROM Employee WHERE Emp_Name LIKE '_____';
+
+SELECT * FROM Employee WHERE Emp_Name LIKE '%la%';
+
+SELECT * FROM Employee ORDER BY Salary DESC; 
+
+SELECT * FROM Employee WHERE Hiredate LIKE '%99';
+
+SELECT Emp_Name,' has held the position of ',Job,' since ',HireDate FROM Employee;
