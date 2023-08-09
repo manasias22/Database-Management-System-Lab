@@ -1,8 +1,8 @@
 # Database-Management-System-Lab
 
-Prerequisite: Discrete Structures
+_Prerequisite: Discrete Structures_
 
-Lab Objectives:
+## Lab Objectives:
 
 1 To explore design and develop of relational model
 
@@ -10,7 +10,7 @@ Lab Objectives:
 
 3 To introduce the concepts of transactions and transaction processing
 
-Lab Outcomes: At the end of the course, the students will be able to
+## Lab Outcomes: At the end of the course, the students will be able to
 
 1 Design ER /EER diagram and convert to relational model for the realworld application
 
